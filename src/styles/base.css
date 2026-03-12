@@ -1,0 +1,88 @@
+/* ============================================================
+   BASE.CSS — Fonts, CSS Variables, Reset, Scrollbar
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS CUSTOM PROPERTIES ──────────────────────────────────── */
+:root {
+  --cyber-cyan:   #00f5ff;
+  --cyber-blue:   #0066ff;
+  --cyber-green:  #00ff88;
+  --cyber-purple: #bf00ff;
+  --cyber-pink:   #ff0080;
+  --cyber-bg:     #020817;
+  --cyber-panel:  #040f24;
+}
+
+/* ── RESET ──────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── CUSTOM SCROLLBAR ────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #020817; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00f5ff, #bf00ff);
+  border-radius: 2px;
+}
+
+/* ── CIRCUIT GRID BACKGROUND ─────────────────────────────────── */
+.circuit-bg {
+  background-color: #020817;
+  background-image:
+    linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(0,245,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.015) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+/* ── SCANLINE OVERLAY ────────────────────────────────────────── */
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.03) 0px,
+    rgba(0,0,0,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ── MATRIX RAIN CANVAS ──────────────────────────────────────── */
+#matrix-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+}
+
+/* ── SECTION TAG ─────────────────────────────────────────────── */
+.section-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cyber-cyan);
+}

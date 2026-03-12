@@ -1,0 +1,97 @@
+/* ============================================================
+   ANIMATIONS.CSS — All Keyframes & Animation Classes
+   ============================================================ */
+
+/* ── GLITCH TEXT ─────────────────────────────────────────────── */
+.glitch-text {
+  position: relative;
+}
+/* .glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: none;
+}
+.glitch-text::before {
+  color: var(--cyber-pink);
+  clip-path: inset(0 0 60% 0);
+  transform: translate(-2px, -1px);
+  animation: glitchTop 4s infinite;
+}
+.glitch-text::after {
+  color: var(--cyber-cyan);
+  clip-path: inset(60% 0 0 0);
+  transform: translate(2px, 1px);
+  animation: glitchBottom 4s infinite;
+}
+
+@keyframes glitchTop {
+  0%,94%,100% { transform: translate(0);           clip-path: inset(0 0 60% 0);  }
+  95%          { transform: translate(-3px, -2px);  clip-path: inset(10% 0 50% 0); }
+  96%          { transform: translate(3px, 1px);    clip-path: inset(30% 0 40% 0); }
+  97%          { transform: translate(-2px, 2px);   clip-path: inset(5% 0 65% 0);  }
+}
+
+@keyframes glitchBottom {
+  0%,94%,100% { transform: translate(0);          clip-path: inset(60% 0 0 0);  }
+  95%          { transform: translate(3px, 2px);   clip-path: inset(50% 0 10% 0); }
+  96%          { transform: translate(-3px, -1px); clip-path: inset(40% 0 30% 0); }
+  97%          { transform: translate(2px, -2px);  clip-path: inset(65% 0 5% 0);  }
+}
+ */
+
+
+/* ── TERMINAL BLINK CURSOR ───────────────────────────────────── */
+.terminal-cursor::after {
+  content: '█';
+  color: var(--cyber-cyan);
+  animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── SKILL BAR SHIMMER ───────────────────────────────────────── */
+.skill-bar-fill {
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--cyber-purple));
+  position: relative;
+  overflow: hidden;
+}
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%);  }
+}
+
+/* ── TYPEWRITER ──────────────────────────────────────────────── */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--cyber-cyan);
+  animation: typing 2s steps(30) forwards, blinkCaret 0.8s step-end infinite;
+}
+
+@keyframes typing     { from { width: 0; }    to { width: 100%; } }
+@keyframes blinkCaret {
+  0%, 100% { border-color: var(--cyber-cyan); }
+  50%      { border-color: transparent;       }
+}
+
+/* ── ORBIT RING ──────────────────────────────────────────────── */
+@keyframes orbitRing {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit     { animation: orbitRing var(--orbit-dur, 8s)  linear infinite; }
+.orbit-rev { animation: orbitRing var(--orbit-dur, 12s) linear infinite reverse; }

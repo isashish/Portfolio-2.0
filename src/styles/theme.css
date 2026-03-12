@@ -1,0 +1,23 @@
+/* ============================================================
+   THEME.CSS — Dark / Light Mode Variable Overrides
+   ============================================================ */
+
+/* ── LIGHT MODE ──────────────────────────────────────────────── */
+.light-mode {
+  --cyber-bg:     #f0f4ff;
+  --cyber-panel:  #ffffff;
+  --cyber-cyan:   #0066ff;
+  --cyber-green:  #00aa55;
+  --cyber-purple: #7700cc;
+  --cyber-pink:   #cc0066;
+}
+
+.light-mode .circuit-bg {
+  background-color: #eef2ff;
+  background-image:
+    linear-gradient(rgba(0,102,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,102,255,0.06) 1px, transparent 1px),
+    linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
