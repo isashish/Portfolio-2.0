@@ -5,9 +5,9 @@ import { FiPhone, FiSend, FiCheck, FiAlertCircle, FiMessageSquare } from "react-
 import { FaTelegramPlane, FaLinkedinIn, FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { personal } from "../data/portfolioData";
 
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID  = "service_apemrdq";
+const EMAILJS_TEMPLATE_ID = "template_ninctgn";
+const EMAILJS_PUBLIC_KEY  = "bSIG9cMhUm_yZrdPT";
 
 export default function Contact({ darkMode: dm }) {
   const formRef = useRef(null);
@@ -118,8 +118,8 @@ export default function Contact({ darkMode: dm }) {
                     style={{background:dm?"rgba(0,255,136,0.15)":"rgba(0,170,85,0.1)",border:"1px solid rgba(0,255,136,0.3)"}}>
                     <FiCheck size={28} style={{color:dm?"#00ff88":"#00aa55"}}/>
                   </motion.div>
-                  <div className={`font-display text-xl font-bold mb-2 ${c.text}`}>TRANSMISSION SENT</div>
-                  <div className={`font-mono text-xs ${c.muted}`}>I'll respond within 24 hours.</div>
+                  <div className={`font-display text-xl font-bold mb-2 ${c.text}`}>MESSAGE TRANSMITTED SUCCESSFULLY 🚀</div>
+                  <div className={`font-mono text-xs ${c.muted}`}>Thanks for reaching out! I'll get back to you within 24 hours.</div>
                 </motion.div>
               ) : (
                 <motion.form key="form" ref={formRef} onSubmit={handleSubmit} className="space-y-5">
