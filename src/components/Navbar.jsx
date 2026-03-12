@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSun, FiMoon, FiMenu, FiX, FiTerminal } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import { SiLeetcode, SiGooglecloud } from "react-icons/si";
 
 const NAV = ["About", "Achievements", "Projects", "Skills", "Contact"];
 
@@ -110,9 +110,10 @@ export default function Navbar({ darkMode, toggleDark }) {
         {/* Right icons */}
         <div className="flex items-center gap-1.5">
           {[
-            { href: "#", Icon: SiLeetcode },
-            { href: "#", Icon: FaGithub },
-            { href: "#", Icon: FaLinkedinIn },
+            { href: "https://leetcode.com/u/Ashish_Suryavanshi/", Icon: SiLeetcode },
+            { href: "https://github.com/isashish", Icon: FaGithub },
+            { href: "https://www.linkedin.com/in/ashish-suryavanshi/", Icon: FaLinkedinIn },
+            { href: "https://www.cloudskillsboost.google/public_profiles/ca679c58-f888-48e5-86c1-e1d1ec8ed5c0?qlcampaign=EDUCR-GCAF24Facilitators-IN%3A%3A87og7JLHG_Q8U_mFSfS2Gw+", Icon: SiGooglecloud },
           ].map(({ href, Icon }, i) => (
             <motion.a key={i} href={href} target="_blank" rel="noreferrer"
               whileHover={{ scale: 1.15, y: -2 }} whileTap={{ scale: 0.9 }}

@@ -20,8 +20,12 @@ export default function Footer({ darkMode: dm }) {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          {[FaInstagram, FaGithub, FaLinkedinIn].map((Icon, i) => (
-            <motion.a key={i} href="#" target="_blank" rel="noreferrer"
+          {[
+            { href: "https://instagram.com/ashish_suryavanshi59", Icon: FaInstagram },
+            { href: "https://github.com/isashish", Icon: FaGithub },
+            { href: "https://www.linkedin.com/in/ashish-suryavanshi/", Icon: FaLinkedinIn },
+            ].map(({ href, Icon }, i) => (
+            <motion.a key={i} href={href} target="_blank" rel="noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               className="w-8 h-8 rounded flex items-center justify-center border transition-all"
               style={{ borderColor: dm?"#0a2040":"#e2e8f0", color: dm?"rgba(255,255,255,0.3)":"#94a3b8" }}>
