@@ -4,7 +4,7 @@ export const personal = {
   lastName: "Suryavanshi",
   title: "Full Stack Developer",
   roles: ["Full Stack Developer", "UI/UX Designer", "React Engineer", "Problem Solver"],
-  bio: "Engineering digital experiences at the intersection of performance and aesthetics. I turn complex problems into elegant, interactive solutions with clean code.",
+  bio: "I am passionate about engineering digital experiences that combine performance, design, and innovation. With a strong focus on clean code and modern technologies, I transform complex problems into elegant, interactive solutions that deliver meaningful user experiences.",
   email: "ashishsuryavanshi005@gmail.com",
   phone: "+91 8349277101",
   linkedin: "ashish-suryavanshi",

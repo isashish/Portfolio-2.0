@@ -93,9 +93,9 @@ export default function Hero({ darkMode: dm, booted, onBoot }) {
   const c = { text: dm ? "text-white" : "text-gray-900", muted: dm ? "text-white/40" : "text-gray-500" };
 
   const stats = [
-    { icon: <FiCode size={14}/>, label: "Projects",   val: "10+" },
-    { icon: <FiCpu size={14}/>,  label: "Technologies", val: "12+" },
-    { icon: <FiZap size={14}/>,  label: "Achievements", val: "5+"  },
+    { icon: <FiCode size={14}/>, label: "Projects",   val: "5+" },
+    { icon: <FiCpu size={14}/>,  label: "Technologies", val: "9+" },
+    { icon: <FiZap size={14}/>,  label: "Achievements", val: "15+"  },
   ];
 
   return (
@@ -214,21 +214,43 @@ export default function Hero({ darkMode: dm, booted, onBoot }) {
             transition={{ duration: 1.2, delay: 0.5, ease: [0.22,1,0.36,1] }}
             onMouseMove={handleMouseMove}
             style={{ rotateX: cardRotateX, rotateY: cardRotateY, perspective: 1000 }}
-            className="relative w-full h-[480px] lg:h-[560px]"
+            className="relative w-full h-[320px] sm:h-[380px] md:h-[450px] lg:h-[560px]"
           >
             {/* Glow halo */}
             <div className="absolute inset-0 rounded-full blur-3xl opacity-15 pointer-events-none"
               style={{ background: dm ? "radial-gradient(circle, #00f5ff 0%, #bf00ff 100%)" : "radial-gradient(circle, #0066ff 0%, #7700cc 100%)" }} />
 
             {/* Corner brackets */}
-            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 pointer-events-none"
+            {/* <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 pointer-events-none"
               style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
             <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 pointer-events-none"
               style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
             <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 pointer-events-none"
               style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
             <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 pointer-events-none"
-              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
+              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} /> */}
+
+            {/* Corner brackets */}
+            <div
+              className="absolute top-2 left-2 sm:top-4 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-l-2 pointer-events-none"
+              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }}
+            />
+
+            <div
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 pointer-events-none"
+              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }}
+            />
+
+            <div
+              className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-l-2 pointer-events-none"
+              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }}
+            />
+
+            <div
+              className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-r-2 pointer-events-none"
+              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }}
+            />
+
 
             {/* Data labels */}
             {[
