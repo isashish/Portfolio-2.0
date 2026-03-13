@@ -39,7 +39,7 @@ export default function Contact({ darkMode: dm }) {
     { Icon: FaLinkedinIn,  label: personal.linkedin, href: `https://linkedin.com/in/${personal.linkedin}`, color: dm?"#bf00ff":"#7700cc" },
   ];
   const socials = [
-    { Icon: FaInstagram, href: "#", label: "Instagram", color: dm?"#ff0080":"#cc0066" },
+    { Icon: FaInstagram, href: "https://instagram.com/ashish_suryavanshi59", label: "Instagram", color: dm?"#ff0080":"#cc0066" },
     { Icon: FaTwitter,   href: "#", label: "Twitter",   color: dm?"#00f5ff":"#0066ff" },
     { Icon: FaFacebookF, href: "#", label: "Facebook",  color: dm?"#bf00ff":"#7700cc" },
   ];
