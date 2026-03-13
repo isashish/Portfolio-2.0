@@ -12,7 +12,7 @@ export const personal = {
   twitter: "ashish_dev",
   instagram: "ashish.dev",
   facebook: "ashish.suryavanshi",
-  resume: "https://drive.google.com/file/d/1JwfwHYI2oFY13kFkQHo4__G4WIelYxIi/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1-l91o5334Z4DHAXST2c8HyIZ_uaZzebx/view?usp=sharing",
   location: "Bhopal, MP, India",
 };
 
