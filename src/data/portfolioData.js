@@ -85,7 +85,7 @@ export const skills = [
   { name: "Python",     level: 75, color: "#3572A5", icon: "🐍" },
   { name: "Java",       level: 70, color: "#b07219", icon: "☕" },
   { name: "MySQL",      level: 78, color: "#00758f", icon: "🐬" },
-  { name: "Node.js",    level: 72, color: "#68a063", icon: "🟩" },
+  { name: "Spring Boot", level: 72, color: "#68a063", icon: "🍃" },
   { name: "Git",        level: 82, color: "#f34f29", icon: "🔧" },
   { name: "Canva",      level: 88, color: "#00c4cc", icon: "🎨" },
 ];

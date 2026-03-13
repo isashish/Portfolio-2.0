@@ -155,10 +155,10 @@ export default function Skills({ darkMode: dm }) {
               </div>
             </div>
             <p className={`font-body text-sm leading-relaxed mb-5 ${c.muted}`}>
-              Skilled in HTML, CSS, JavaScript, React, Node.js. Database experience with MySQL. Always learning the cutting edge.
+              Skilled in HTML, CSS, JavaScript, React, SpringBoot Database experience with MySQL. Always learning the cutting edge.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["React","Node.js","JS","MySQL","Java"].map(s=>(
+              {["React","Spring Boot","Java","MySQL","JS"].map(s=>(
                 <span key={s} className="font-mono text-xs px-2 py-1 rounded"
                   style={{background:dm?"rgba(0,245,255,0.12)":"rgba(0,102,255,0.08)",color:dm?"#00f5ff":"#0066ff",border:`1px solid ${dm?"#00f5ff22":"#0066ff22"}`}}>
                   {s}
