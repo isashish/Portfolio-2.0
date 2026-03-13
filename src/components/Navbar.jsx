@@ -126,7 +126,7 @@ export default function Navbar({ darkMode, toggleDark }) {
             </motion.a>
           ))}
 
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+          {/* <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
             onClick={toggleDark}
             className={`w-8 h-8 flex items-center justify-center rounded border transition-all ${
               dm ? "border-cyber-border text-yellow-400 hover:border-yellow-400/40 hover:bg-yellow-400/5"
@@ -134,7 +134,7 @@ export default function Navbar({ darkMode, toggleDark }) {
             }`}
           >
             {dm ? <FiSun size={14} /> : <FiMoon size={14} />}
-          </motion.button>
+          </motion.button> */}
 
           <button className={`md:hidden w-8 h-8 flex items-center justify-center ${dm ? "text-white/70" : "text-gray-600"}`}
             onClick={() => setMobileOpen(!mobileOpen)}>
