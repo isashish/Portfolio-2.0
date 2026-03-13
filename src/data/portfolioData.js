@@ -78,16 +78,16 @@ export const projects = [
 ];
 
 export const skills = [
-  { name: "HTML5",      level: 92, color: "#e34c26", icon: "🟧" },
-  { name: "CSS3",       level: 88, color: "#264de4", icon: "🟦" },
-  { name: "JavaScript", level: 85, color: "#f0db4f", icon: "🟨" },
+  { name: "HTML5",      level: 90, color: "#e34c26", icon: "🟧" },
+  { name: "CSS3",       level: 85, color: "#264de4", icon: "🟦" },
+  { name: "JavaScript", level: 83, color: "#f0db4f", icon: "🟨" },
   { name: "React",      level: 80, color: "#61dafb", icon: "⚛️"  },
   { name: "Python",     level: 75, color: "#3572A5", icon: "🐍" },
-  { name: "Java",       level: 70, color: "#b07219", icon: "☕" },
+  { name: "Java",       level: 88, color: "#b07219", icon: "☕" },
   { name: "MySQL",      level: 78, color: "#00758f", icon: "🐬" },
-  { name: "Spring Boot", level: 72, color: "#68a063", icon: "🍃" },
+  { name: "Spring Boot", level: 60, color: "#68a063", icon: "🍃" },
   { name: "Git",        level: 82, color: "#f34f29", icon: "🔧" },
-  { name: "Canva",      level: 88, color: "#00c4cc", icon: "🎨" },
+  { name: "Canva",      level: 73, color: "#00c4cc", icon: "🎨" },
 ];
 
 export const techStack = [
