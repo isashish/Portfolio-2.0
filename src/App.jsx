@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSpring, animated } from "@react-spring/web";
-//import { useSpring, animated } from "framer-motion";
+
 import Navbar       from "./components/Navbar";
 import Hero         from "./components/Hero";
 import Achievements from "./components/Achievements";
@@ -10,9 +9,7 @@ import Skills       from "./components/Skills";
 import Contact      from "./components/Contact";
 import Footer       from "./components/Footer";
 import MatrixRain   from "./components/MatrixRain";
-// CyberCursor is available at ./components/CyberCursor (optional replacement for built-in Cursor)
 
-// ── Custom cursor (simplified, avoids spring import issues) ──────────────────
 function Cursor({ darkMode }) {
   const [pos, setPos]     = useState({ x: -200, y: -200 });
   const [ring, setRing]   = useState({ x: -200, y: -200 });

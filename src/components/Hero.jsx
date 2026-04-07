@@ -73,7 +73,6 @@ function GlitchHeading({ text, dm }) {
 
 export default function Hero({ darkMode: dm, booted, onBoot }) {
   const [roleIdx, setRoleIdx] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const cardRotateX = useTransform(mouseY, [-300, 300], [8, -8]);
@@ -220,15 +219,6 @@ export default function Hero({ darkMode: dm, booted, onBoot }) {
             <div className="absolute inset-0 rounded-full blur-3xl opacity-15 pointer-events-none"
               style={{ background: dm ? "radial-gradient(circle, #00f5ff 0%, #bf00ff 100%)" : "radial-gradient(circle, #0066ff 0%, #7700cc 100%)" }} />
 
-            {/* Corner brackets */}
-            {/* <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 pointer-events-none"
-              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
-            <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 pointer-events-none"
-              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
-            <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 pointer-events-none"
-              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} />
-            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 pointer-events-none"
-              style={{ borderColor: dm ? "#00f5ff" : "#0066ff" }} /> */}
 
             {/* Corner brackets */}
             <div
