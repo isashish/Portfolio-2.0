@@ -30,23 +30,23 @@ function BootSequence({ onDone }) {
     <AnimatePresence>
       {!done && (
         <motion.div exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[200] flex items-center justify-center"
+          className="fixed inset-0 z-[200] flex items-center justify-center p-4"
           style={{ background: "#020817" }}
         >
-          <div className="max-w-lg w-full px-8">
-            <div className="font-mono text-xs mb-6" style={{ color: "#00f5ff" }}>
-              ╔══════════════════════════════════════════╗<br/>
-              ║   ASHISH_OS v2.0.26 — PORTFOLIO BOOT     ║<br/>
-              ╚══════════════════════════════════════════╝
+          <div className="w-fit max-w-full overflow-hidden">
+            <div className="font-mono text-[10px] sm:text-xs mb-6 whitespace-pre" style={{ color: "#00f5ff" }}>
+              {"╔══════════════════════════════════════════╗\n"}
+              {"║   ASHISH_OS v2.0.26 — PORTFOLIO BOOT     ║\n"}
+              {"╚══════════════════════════════════════════╝"}
             </div>
             {lines.map((l, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
-                className="font-mono text-xs mb-1" style={{ color: i === lines.length - 1 ? "#00ff88" : "#00f5ffaa" }}>
+                className="font-mono text-[10px] sm:text-xs mb-1 whitespace-nowrap" style={{ color: i === lines.length - 1 ? "#00ff88" : "#00f5ffaa" }}>
                 {l}
               </motion.div>
             ))}
             {lines.length < BOOT_LINES.length && (
-              <div className="font-mono text-xs mt-1 terminal-cursor" style={{ color: "#00f5ff" }} />
+              <div className="font-mono text-[10px] sm:text-xs mt-1 terminal-cursor" style={{ color: "#00f5ff" }} />
             )}
           </div>
         </motion.div>

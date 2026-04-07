@@ -57,7 +57,13 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [booted,   setBooted]   = useState(false);
 
-  useEffect(() => { document.documentElement.classList.toggle("dark", darkMode); }, [darkMode]);
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    if (!booted) {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  }, [darkMode, booted]);
 
   return (
     <div className={`min-h-screen relative font-body ${darkMode ? "circuit-bg" : "light-mode circuit-bg"} scanlines`}>
@@ -82,7 +88,9 @@ export default function App() {
 
       {/* Content */}
       <div className="relative z-10">
-        <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
+        <AnimatePresence>
+          {booted && <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />}
+        </AnimatePresence>
         <AnimatePresence mode="wait">
           <motion.div key={darkMode?"d":"l"} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4}}>
             <Hero        darkMode={darkMode} booted={booted} onBoot={() => setBooted(true)} />
