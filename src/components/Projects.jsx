@@ -5,6 +5,7 @@ import { projects } from "../data/portfolioData";
 
 import amazonImage from "../assets/images/amazonclone.jpeg";
 import youtubeImage from "../assets/images/youtubeclone.jpeg";
+import healthMitraImage from "../assets/images/HealthMitra.jpeg";
 
 function CyberMockup({ project: p, dm }) {
   const chromeBg = dm ? "#0a1628" : "#1e293b";
@@ -32,19 +33,8 @@ function CyberMockup({ project: p, dm }) {
         {p.mockupContent === "amazon" && (
           <img src={amazonImage} alt="Amazon Clone" className="w-full aspect-video object-cover object-top rounded" />
         )}
-        {p.mockupContent === "rps" && (
-          <div className="flex flex-col items-start gap-3 p-3">
-            <div className="font-mono text-sm font-bold" style={{ color: dm ? "#00f5ff" : "#0066ff" }}>Game Result: Tie!</div>
-            <div className="flex gap-4">
-              <div className="text-center"><div className="text-2xl">✊</div><div className="font-mono text-xs" style={{ color: dm ? "#ffffff44" : "#64748b" }}>You</div></div>
-              <div className="text-center self-center font-mono text-xs" style={{ color: dm ? "#00f5ff" : "#0066ff" }}>VS</div>
-              <div className="text-center"><div className="text-2xl">✊</div><div className="font-mono text-xs" style={{ color: dm ? "#ffffff44" : "#64748b" }}>CPU</div></div>
-            </div>
-            <div className="font-mono text-xs" style={{ color: dm ? "#00ff8888" : "#16a34a" }}>Score: W:0 / L:0 / T:1</div>
-            <div className="px-3 py-1.5 rounded font-mono text-xs" style={{ background: dm ? "rgba(0,245,255,0.1)" : "#dbeafe", color: dm ? "#00f5ff" : "#0066ff", border: `1px solid ${dm ? "#00f5ff33" : "#93c5fd"}` }}>
-              Play Again
-            </div>
-          </div>
+        {p.mockupContent === "healthmitra" && (
+          <img src={healthMitraImage} alt="HealthMitra Full Stack App" className="w-full aspect-video object-cover object-top rounded shadow-sm" />
         )}
       </div>
     </div>
