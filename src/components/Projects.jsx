@@ -3,20 +3,19 @@ import { motion } from "framer-motion";
 import { FiExternalLink, FiTerminal, FiMonitor } from "react-icons/fi";
 import { projects } from "../data/portfolioData";
 
-import amazonVideo from "../assets/videos/amazonClone_Video.mp4";
-import youtubeVideo from "../assets/videos/youtubeClone_Video.mp4";
-import rockPaperScissorsVideo from "../assets/videos/rockPaperScissors_Video.mp4";
+import amazonImage from "../assets/images/amazonclone.jpeg";
+import youtubeImage from "../assets/images/youtubeclone.jpeg";
 
 function CyberMockup({ project: p, dm }) {
   const chromeBg = dm ? "#0a1628" : "#1e293b";
-  const panelBg  = dm ? "#020817" : "#f8fafc";
+  const panelBg = dm ? "#020817" : "#f8fafc";
 
   return (
     <div className="rounded-xl overflow-hidden shadow-2xl"
       style={{ border: `1px solid ${p.color}33`, boxShadow: `0 0 40px ${p.color}15` }}>
       {/* Browser bar */}
       <div className="px-3 py-2 flex items-center gap-2" style={{ background: chromeBg }}>
-        {["#ff5f57","#ffbd2e","#28c840"].map((c) => (
+        {["#ff5f57", "#ffbd2e", "#28c840"].map((c) => (
           <div key={c} className="w-3 h-3 rounded-full" style={{ background: c }} />
         ))}
         <div className="flex-1 mx-3 rounded px-2 py-1 font-mono text-xs" style={{ background: dm ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.1)", color: dm ? "#ffffff44" : "#ffffff88" }}>
@@ -26,86 +25,14 @@ function CyberMockup({ project: p, dm }) {
         <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#28c840" }} />
       </div>
 
-      {/* Content */}
       <div className="p-4" style={{ background: panelBg, minHeight: 200 }}>
-        {/* {p.mockupContent === "youtube" && (
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-16 h-5 rounded font-mono text-xs flex items-center justify-center font-bold" style={{ background: "#ff0000", color: "#fff", fontSize: "10px" }}>▶ YouTube</div>
-              <div className="flex-1 h-5 rounded" style={{ background: dm ? "#ffffff10" : "#e2e8f0" }} />
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="rounded overflow-hidden">
-                  <div className="aspect-video rounded-sm" style={{ background: dm ? `rgba(255,0,0,${0.1+i*0.05})` : `rgba(255,0,0,${0.05+i*0.03})` }} />
-                  <div className="h-2 rounded mt-1" style={{ background: dm ? "#ffffff10" : "#e2e8f0" }} />
-                  <div className="h-2 rounded mt-1 w-2/3" style={{ background: dm ? "#ffffff08" : "#f1f5f9" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )} */}
         {p.mockupContent === "youtube" && (
-          <video
-            src= {youtubeVideo}
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded"
-            onMouseEnter={(e) => e.target.play()}
-            onMouseLeave={(e) => {
-              e.target.pause();
-              e.target.currentTime = 0; // optional: reset video
-            }}
-          />
+          <img src={youtubeImage} alt="YouTube Clone" className="w-full aspect-video object-cover object-top rounded" />
         )}
-         {p.mockupContent === "amazon" && (
-          <video
-            src= {amazonVideo}
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded"
-            onMouseEnter={(e) => e.target.play()}
-            onMouseLeave={(e) => {
-              e.target.pause();
-              e.target.currentTime = 0; // optional: reset video
-            }}
-          />
+        {p.mockupContent === "amazon" && (
+          <img src={amazonImage} alt="Amazon Clone" className="w-full aspect-video object-cover object-top rounded" />
         )}
-         {p.mockupContent === "rps" && (
-          <video
-            src= {rockPaperScissorsVideo}
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded"
-            onMouseEnter={(e) => e.target.play()}
-            onMouseLeave={(e) => {
-              e.target.pause();
-              e.target.currentTime = 0; // optional: reset video
-            }}    
-          />
-        )}
-        {/* {p.mockupContent === "amazon" && (
-          <div>
-            <div className="flex items-center gap-2 mb-3 p-2 rounded" style={{ background: "#232f3e" }}>
-              <span className="font-bold text-xs" style={{ color: "#ff9900" }}>amazon</span>
-              <div className="flex-1 h-5 rounded" style={{ background: "rgba(255,255,255,0.2)" }} />
-              <span className="text-xs text-white/60">🛒 Cart</span>
-            </div>
-            <div className="grid grid-cols-4 gap-2">
-              {[["#e2e8f0","#fbbf24"],["#dbeafe","#f59e0b"],["#dcfce7","#fbbf24"],["#fce7f3","#f59e0b"]].map(([bg,star], i) => (
-                <div key={i} className="rounded p-1">
-                  <div className="aspect-square rounded-sm mb-1" style={{ background: dm ? "rgba(255,255,255,0.08)" : bg }} />
-                  <div className="h-1.5 rounded" style={{ background: dm ? "#ffffff12" : "#e2e8f0" }} />
-                  <div className="flex gap-0.5 mt-1">{[0,1,2,3,4].map(s=><div key={s} className="w-2 h-2 rounded-sm" style={{background:star}}/>)}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )} */}
-        {/* {p.mockupContent === "rps" && (
+        {p.mockupContent === "rps" && (
           <div className="flex flex-col items-start gap-3 p-3">
             <div className="font-mono text-sm font-bold" style={{ color: dm ? "#00f5ff" : "#0066ff" }}>Game Result: Tie!</div>
             <div className="flex gap-4">
@@ -118,7 +45,7 @@ function CyberMockup({ project: p, dm }) {
               Play Again
             </div>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );
@@ -158,11 +85,11 @@ export default function Projects({ darkMode: dm }) {
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22,1,0.36,1] }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}
             >
               {/* Mockup */}
-              <motion.div whileHover={{ scale: 1.03, rotateY: i%2===0 ? -3 : 3 }}
+              <motion.div whileHover={{ scale: 1.03, rotateY: i % 2 === 0 ? -3 : 3 }}
                 transition={{ type: "spring", stiffness: 200 }}
                 style={{ perspective: 800 }}>
                 <CyberMockup project={proj} dm={dm} />
@@ -172,7 +99,7 @@ export default function Projects({ darkMode: dm }) {
               <div className="relative">
                 {/* Index */}
                 <div className="font-mono text-xs mb-3" style={{ color: proj.color + "99" }}>
-                  PROJ_{String(proj.id).padStart(3,"0")} // {proj.mockupContent.toUpperCase()}
+                  PROJ_{String(proj.id).padStart(3, "0")} // {proj.mockupContent.toUpperCase()}
                 </div>
 
                 <h3 className={`font-display text-2xl md:text-3xl font-bold mb-4 ${c.text}`}>
