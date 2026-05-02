@@ -76,6 +76,16 @@ export const projects = [
     link: "https://pro-health-mitra.vercel.app/",
     mockupContent: "healthmitra",
   },
+  {
+    id: 4,
+    title: "AI-FinTech - Full Stack Web",
+    highlight: "AI-FinTech",
+    desc: "Designed and implemented an AI-based financial application that analyzes market data and user financial behavior to provide personalized financial advice and data-driven predictions.",
+    tags: ["React", "AI", "Finance", "Full Stack"],
+    color: "#00f5ff", accent: "#bf00ff",
+    link: "https://ai-driven-fintech.vercel.app/",
+    mockupContent: "aifintech",
+  },
 ];
 
 export const skills = [

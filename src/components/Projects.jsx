@@ -6,6 +6,7 @@ import { projects } from "../data/portfolioData";
 import amazonImage from "../assets/images/amazonclone.jpeg";
 import youtubeImage from "../assets/images/youtubeclone.jpeg";
 import healthMitraImage from "../assets/images/HealthMitra.jpeg";
+import aifintechImage from "../assets/images/aifintech1.png";
 
 function CyberMockup({ project: p, dm }) {
   const chromeBg = dm ? "#0a1628" : "#1e293b";
@@ -35,6 +36,9 @@ function CyberMockup({ project: p, dm }) {
         )}
         {p.mockupContent === "healthmitra" && (
           <img src={healthMitraImage} alt="HealthMitra Full Stack App" className="w-full aspect-video object-cover object-top rounded shadow-sm" />
+        )}
+        {p.mockupContent === "aifintech" && (
+          <img src={aifintechImage} alt="AI-FinTech App" className="w-full aspect-video object-cover object-top rounded shadow-sm" />
         )}
       </div>
     </div>
