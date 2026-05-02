@@ -92,7 +92,7 @@ export default function Hero({ darkMode: dm, booted, onBoot }) {
   const c = { text: dm ? "text-white" : "text-gray-900", muted: dm ? "text-white/40" : "text-gray-500" };
 
   const stats = [
-    { icon: <FiCode size={14}/>, label: "Projects",   val: "5+" },
+    { icon: <FiCode size={14}/>, label: "Projects",   val: "7+" },
     { icon: <FiCpu size={14}/>,  label: "Technologies", val: "9+" },
     { icon: <FiZap size={14}/>,  label: "Achievements", val: "15+"  },
   ];
