@@ -12,7 +12,7 @@ export const personal = {
   twitter: "ashish_dev",
   instagram: "ashish.dev",
   facebook: "ashish.suryavanshi",
-  resume: "https://drive.google.com/file/d/1hf3cbmLE5UfIY_hkCwzqMXl9FOVV_Y4B/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1res3IIDtRk4AZjN2FVVdtlVMwoxgxE2f/view?usp=sharing",
   location: "Bhopal, MP, India",
 };
 
@@ -81,11 +81,21 @@ export const projects = [
     title: "AI-FinTech - Full Stack Web",
     highlight: "AI-FinTech",
     desc: "Designed and implemented an AI-based financial application that analyzes market data and user financial behavior to provide personalized financial advice and data-driven predictions.",
-    tags: ["React", "AI", "Finance", "Full Stack"],
+    tags: ["React", "Tailwind CSS", "Nodejs", "MongoDB", "AI Services"],
     color: "#00f5ff", accent: "#bf00ff",
     link: "https://ai-driven-fintech.vercel.app/",
     mockupContent: "aifintech",
   },
+  {
+    id: 5,
+    title: "E-NagarSetu - Full Stack Web",
+    highlight: "E-NagarSetu",
+    desc: "E-NagarSetu is a digital municipal services platform designed to connect citizens with local government services. It enables users to access municipal services, submit applications, and report civic issues online.",
+    tags: ["React", "Tailwind CSS", "Spring Boot", "MongoDB", "AI Services"],
+    color: "#72ef72", accent: "#00f5ff",
+    link: "https://e-nagar-setu.vercel.app/",
+    mockupContent: "e-nagarsetu",
+  }
 ];
 
 export const skills = [

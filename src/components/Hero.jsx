@@ -94,7 +94,7 @@ export default function Hero({ darkMode: dm, booted, onBoot }) {
   const stats = [
     { icon: <FiCode size={14}/>, label: "Projects",   val: "6+" },
     { icon: <FiCpu size={14}/>,  label: "Technologies", val: "9+" },
-    { icon: <FiZap size={14}/>,  label: "Achievements", val: "18+"  },
+    { icon: <FiZap size={14}/>,  label: "Achievements", val: "17+"  },
   ];
 
   return (
