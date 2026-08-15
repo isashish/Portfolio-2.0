@@ -12,7 +12,7 @@ export const personal = {
   twitter: "ashish_dev",
   instagram: "ashish.dev",
   facebook: "ashish.suryavanshi",
-  resume: "https://drive.google.com/file/d/1res3IIDtRk4AZjN2FVVdtlVMwoxgxE2f/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1FqU-Ki3iQoYbBOuvlHrbBPIlpH2O4DFQ/view?usp=sharing",
   location: "Bhopal, MP, India",
 };
 
@@ -47,6 +47,41 @@ export const achievements = [
   },
 ];
 
+export const technicalAchievements = [
+  {
+    id: 1,
+    title: "LeetCode",
+    description: "Solved 700+ Data Structures & Algorithms problems.",
+    icon: "💻", color: "#f0ad4e"
+  },
+  {
+    id: 2,
+    title: "Amazon ML Summer School 2026",
+    description: "Selected for the Selection Test stage.",
+    icon: "🤖", color: "#ff9900"
+  },
+  {
+    id: 3,
+    title: "Google Cloud Arcade",
+    description: "Achieved Premium+ milestone in the Google Cloud Arcade Facilitator Program.",
+    icon: "☁️", color: "#4285F4"
+  },
+  {
+    id: 4,
+    title: "Smart India Hackathon (SIH)",
+    description: "Selected at the college-level hackathon.",
+    icon: "🚀", color: "#00f5ff",
+    link: "https://drive.google.com/file/d/13MU60YG2RcsxZUTZXRwTNH4N_Vz58yQi/view?usp=sharing"
+  },
+  {
+    id: 5,
+    title: "Technovision Ideathon",
+    description: "Participated in the Ideathon.",
+    icon: "💡", color: "#bf00ff",
+    link: "https://drive.google.com/file/d/1mouNSBGbW2MOlX8C_U_jBrBO1tM8cyU_/view?usp=sharing"
+  }
+];
+
 export const projects = [
   {
     id: 1,
@@ -71,7 +106,7 @@ export const projects = [
     title: "HealthMitra — Full Stack Web",
     highlight: "HealthMitra",
     desc: "A comprehensive healthcare application integrating a React frontend with a robust Spring Boot backend. Includes secure authentication, seamless data flow, and responsive UI components.",
-    tags: ["React", "Spring Boot", "Java", "Full Stack"],
+    tags: ["React.js", "Java", "Spring Boot", "Spring MVC", "Tailwind CSS", "REST API"],
     color: "#14b8a6", accent: "#0ea5e9",
     link: "https://pro-health-mitra.vercel.app/",
     mockupContent: "healthmitra",
@@ -81,7 +116,7 @@ export const projects = [
     title: "AI-FinTech - Full Stack Web",
     highlight: "AI-FinTech",
     desc: "Designed and implemented an AI-based financial application that analyzes market data and user financial behavior to provide personalized financial advice and data-driven predictions.",
-    tags: ["React", "Tailwind CSS", "Nodejs", "MongoDB", "AI Services"],
+    tags: ["React.js", "Tailwind CSS", "Nodejs", "Express.js", " MongoDB", "Python", " LSTM", "yFinance API"],
     color: "#00f5ff", accent: "#bf00ff",
     link: "https://ai-driven-fintech.vercel.app/",
     mockupContent: "aifintech",
@@ -91,10 +126,20 @@ export const projects = [
     title: "E-NagarSetu - Full Stack Web",
     highlight: "E-NagarSetu",
     desc: "E-NagarSetu is a digital municipal services platform designed to connect citizens with local government services. It enables users to access municipal services, submit applications, and report civic issues online.",
-    tags: ["React", "Tailwind CSS", "Spring Boot", "MongoDB", "AI Services"],
+    tags: ["React.js", "Tailwind CSS", "Java","Spring Boot", "MongoDB", "REST APIs", "MongoDB"],
     color: "#72ef72", accent: "#00f5ff",
     link: "https://e-nagar-setu.vercel.app/",
     mockupContent: "e-nagarsetu",
+  },
+  {
+    id: 6,
+    title: "AI-Interview Agent - AI Powered Web App",
+    highlight: "AI-Interview Agent",
+    desc: "Built an AI-powered interview platform that conducts interviews, evaluates candidate responses across technical, communication, and problem-solving skills, and generates structured scores with performance feedback reports.",
+    tags: ["React.js", "Tailwind CSS", "Java","Spring Boot", "REST APIs", "AI API"],
+    color: "#9585f0", accent: "#00f5ff",
+    link: "https://ab-talks-interview-agent.vercel.app/",
+    mockupContent: "AI-Interviewer",
   }
 ];
 

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar       from "./components/Navbar";
 import Hero         from "./components/Hero";
 import Achievements from "./components/Achievements";
+import TechnicalAchievements from "./components/TechnicalAchievements";
 import Projects     from "./components/Projects";
 import Skills       from "./components/Skills";
 import Contact      from "./components/Contact";
@@ -92,6 +93,7 @@ export default function App() {
           <motion.div key={darkMode?"d":"l"} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4}}>
             <Hero        darkMode={darkMode} booted={booted} onBoot={() => setBooted(true)} />
             <Achievements darkMode={darkMode} />
+            <TechnicalAchievements darkMode={darkMode} />
             <Projects    darkMode={darkMode} />
             <Skills      darkMode={darkMode} />
             <Contact     darkMode={darkMode} />

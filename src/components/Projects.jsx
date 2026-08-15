@@ -8,6 +8,7 @@ import youtubeImage from "../assets/images/youtubeclone.jpeg";
 import healthMitraImage from "../assets/images/HealthMitra.jpeg";
 import aifintechImage from "../assets/images/aifintech1.png";
 import eNagarsetuImage from "../assets/images/e-NagarSetu.png";
+import aiInterviewerImage from "../assets/images/AI-Interviewer.png";
 
 function CyberMockup({ project: p, dm }) {
   const chromeBg = dm ? "#0a1628" : "#1e293b";
@@ -28,7 +29,7 @@ function CyberMockup({ project: p, dm }) {
         <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#28c840" }} />
       </div>
 
-      <div className="p-5" style={{ background: panelBg, minHeight: 200 }}>
+      <div className="p-6" style={{ background: panelBg, minHeight: 200 }}>
         {p.mockupContent === "youtube" && (
           <img src={youtubeImage} alt="YouTube Clone" className="w-full aspect-video object-cover object-top rounded" />
         )}
@@ -43,6 +44,9 @@ function CyberMockup({ project: p, dm }) {
         )}
         {p.mockupContent === "e-nagarsetu" && (
           <img src={eNagarsetuImage} alt="E-NagarSetu App" className="w-full aspect-video object-cover object-left-top rounded shadow-sm" />
+        )}
+        {p.mockupContent === "AI-Interviewer" && (
+          <img src={aiInterviewerImage} alt="AI-Interviewer App" className="w-full aspect-video object-cover object-left-top rounded shadow-sm" />
         )}
       </div>
     </div>
