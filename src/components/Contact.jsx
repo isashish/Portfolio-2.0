@@ -4,10 +4,11 @@ import emailjs from "@emailjs/browser";
 import { FiPhone, FiSend, FiCheck, FiAlertCircle, FiMessageSquare } from "react-icons/fi";
 import { FaTelegramPlane, FaLinkedinIn, FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { personal } from "../data/portfolioData";
+import EarthCanvas from "./Earth";
 
-const EMAILJS_SERVICE_ID  = "service_apemrdq";
-const EMAILJS_TEMPLATE_ID = "template_ninctgn";
-const EMAILJS_PUBLIC_KEY  = "bSIG9cMhUm_yZrdPT";
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_apemrdq";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_ninctgn";
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "bSIG9cMhUm_yZrdPT";
 
 export default function Contact({ darkMode: dm }) {
   const formRef = useRef(null);
@@ -52,6 +53,29 @@ export default function Contact({ darkMode: dm }) {
       </div>
 
       <div className="max-w-6xl mx-auto">
+        {/* 3D Earth above Let's Connect */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative mb-6 flex flex-col items-center justify-center"
+        >
+          {/* Subtle cyber background radial glow matching theme */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full pointer-events-none blur-3xl opacity-25"
+            style={{
+              background: dm
+                ? "radial-gradient(circle, #00f5ff 0%, #bf00ff 60%, transparent 100%)"
+                : "radial-gradient(circle, #0066ff 0%, #7700cc 60%, transparent 100%)",
+            }}
+          />
+          <EarthCanvas className="w-full h-[360px] sm:h-[440px] md:h-[500px]" />
+          <div className={`-mt-4 font-mono text-[10px] tracking-widest uppercase ${dm ? "text-cyan-400/40" : "text-blue-500/50"}`}>
+            ✦ Drag to interact with planet ✦
+          </div>
+        </motion.div>
+
         {/* Header */}
         <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7}} className="text-center mb-20">
           <div className="section-tag mb-3 flex items-center justify-center gap-2"><FiMessageSquare size={12}/> COMM_MODULE_05</div>
