@@ -14,6 +14,7 @@ export default function Contact({ darkMode: dm }) {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [focusedField, setFocusedField] = useState(null);
 
   const c = { text: dm ? "text-white" : "text-gray-800", muted: dm ? "text-white/40" : "text-gray-500" };
@@ -27,11 +28,55 @@ export default function Contact({ darkMode: dm }) {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
+    setErrorMessage("");
+
+    const templateParams = {
+      name: form.name,
+      from_name: form.name,
+      email: form.email,
+      from_email: form.email,
+      reply_to: form.email,
+      to_name: personal.name,
+      message: form.message,
+    };
+
     try {
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY);
-      setStatus("sent"); setForm({ name: "", email: "", message: "" });
+      // First attempt with explicit template params mapping
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
-    } catch { setStatus("error"); setTimeout(() => setStatus("idle"), 4000); }
+    } catch (err) {
+      console.warn("EmailJS send failed, retrying with sendForm:", err);
+      try {
+        await emailjs.sendForm(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          EMAILJS_PUBLIC_KEY
+        );
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } catch (formErr) {
+        console.error("EmailJS Error:", formErr);
+        const statusNum = formErr?.status || err?.status;
+        const errText = formErr?.text || err?.text || formErr?.message || "";
+        
+        if (statusNum === 412 || errText.includes("grant") || errText.includes("412")) {
+          setErrorMessage("Gmail authorization expired (HTTP 412). Please reconnect Gmail in EmailJS dashboard.");
+        } else {
+          setErrorMessage("Transmission error. Please try again or email directly.");
+        }
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 7000);
+      }
+    }
   };
 
   const contacts = [
@@ -147,6 +192,12 @@ export default function Contact({ darkMode: dm }) {
                 </motion.div>
               ) : (
                 <motion.form key="form" ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                  {/* Hidden fields for template compatibility */}
+                  <input type="hidden" name="from_name" value={form.name} />
+                  <input type="hidden" name="from_email" value={form.email} />
+                  <input type="hidden" name="reply_to" value={form.email} />
+                  <input type="hidden" name="to_name" value={personal.name} />
+
                   {[
                     { name:"name", label:"FULL_NAME", placeholder:"Your Full name", type:"text" },
                     { name:"email", label:"EMAIL_ADDR", placeholder:"Your Email", type:"email" },
@@ -176,10 +227,26 @@ export default function Contact({ darkMode: dm }) {
                     />
                   </div>
 
-                  {status==="error" && (
-                    <div className="flex items-center gap-2 text-red-400 font-mono text-xs">
-                      <FiAlertCircle size={12}/> TRANSMISSION_ERROR: Please retry.
-                    </div>
+                  {status === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-3 rounded border border-red-500/30 bg-red-500/10 space-y-1.5"
+                    >
+                      <div className="flex items-center gap-2 text-red-400 font-mono text-xs">
+                        <FiAlertCircle size={14} className="flex-shrink-0" />
+                        <span>{errorMessage || "TRANSMISSION_ERROR: Please retry."}</span>
+                      </div>
+                      <div className="font-mono text-[11px] text-gray-400 pl-5">
+                        Direct Email:{" "}
+                        <a
+                          href={`mailto:${personal.email}?subject=Contact from Portfolio: ${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message)}`}
+                          className="text-cyan-400 underline hover:text-cyan-300"
+                        >
+                          {personal.email}
+                        </a>
+                      </div>
+                    </motion.div>
                   )}
 
                   <motion.button type="submit" disabled={status==="sending"}
