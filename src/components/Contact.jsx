@@ -41,6 +41,8 @@ export default function Contact({ darkMode: dm }) {
     };
 
     try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY);
+      setStatus("sent"); setForm({ name: "", email: "", message: "" });
       // First attempt with explicit template params mapping
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -51,6 +53,7 @@ export default function Contact({ darkMode: dm }) {
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
+    } catch { setStatus("error"); setTimeout(() => setStatus("idle"), 4000); }
     } catch (err) {
       console.warn("EmailJS send failed, retrying with sendForm:", err);
       try {
@@ -227,6 +230,10 @@ export default function Contact({ darkMode: dm }) {
                     />
                   </div>
 
+                  {status==="error" && (
+                    <div className="flex items-center gap-2 text-red-400 font-mono text-xs">
+                      <FiAlertCircle size={12}/> TRANSMISSION_ERROR: Please retry.
+                    </div>
                   {status === "error" && (
                     <motion.div
                       initial={{ opacity: 0, y: -5 }}
